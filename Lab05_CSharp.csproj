@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>true</Prefer32Bit>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -98,6 +98,7 @@
     </ApplicationDefinition>
     <Compile Include="Models\MyProcess.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Tools\RelayCommand.cs" />
     <Compile Include="ViewModel\ProcessViewModel.cs" />
     <Compile Include="Views\ProcessListView.xaml.cs">
       <DependentUpon>ProcessListView.xaml</DependentUpon>

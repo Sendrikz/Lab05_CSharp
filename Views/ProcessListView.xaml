@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab05_CSharp.Views"
         mc:Ignorable="d"
-        Height="450" Width="800">
-    <Grid>
+        Height="450" Width="842.4">
+    <Grid Margin="0,-31,-339.6,-0.4">
         <DataGrid ItemsSource="{Binding ProcessesList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
         SelectedItem="{Binding SelectedProcess, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" 
-        IsReadOnly="True" AutoGenerateColumns="False" Margin="38,10,22.6,16">
+        IsReadOnly="True" AutoGenerateColumns="False" Margin="38,10,272,220">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
@@ -20,6 +20,20 @@
                 <DataGridTextColumn Header="User name" Binding="{Binding UserName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="File path" Binding="{Binding FilePath}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Start date" Binding="{Binding StartDate}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid  ItemsSource="{Binding SelectedProcess.Modules, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="38,294,770,27" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ModuleName" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Path" Binding="{Binding Path}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid  ItemsSource="{Binding SelectedProcess.Threads, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" AutoGenerateColumns="False" Margin="524,294,272,27" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="State" Binding="{Binding State}"></DataGridTextColumn>
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

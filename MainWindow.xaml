@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Lab05_CSharp"
         xmlns:views="clr-namespace:Lab05_CSharp.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="1100">
     <Grid>
-        <views:ProcessListView  Grid.Column="1" Grid.Row="0" />
+        <views:ProcessListView  Grid.Column="1" Grid.Row="0" Loaded="ProcessListView_Loaded" />
     </Grid>
 </Window>

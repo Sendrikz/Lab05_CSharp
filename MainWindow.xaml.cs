@@ -24,5 +24,10 @@ namespace Lab05_CSharp
         {
             InitializeComponent();
         }
+
+        private void ProcessListView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,19 +1,22 @@
 ﻿using Lab05_CSharp.Models;
 using Lab05_CSharp.Properties;
+using Lab05_CSharp.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace Lab05_CSharp.ViewModel
 {
     class ProcessViewModel : INotifyPropertyChanged
     {
-        public Process SelectedProcess { get; set; }
+        private MyProcess _selectedProcess;
         public HashSet<MyProcess> ProcessesList { get; set; }
+       
 
-    
         internal ProcessViewModel()
         {
             Process[] processes = Process.GetProcesses();
@@ -25,6 +28,16 @@ namespace Lab05_CSharp.ViewModel
             }
         }
 
+        public MyProcess SelectedProcess
+        {
+            get => _selectedProcess;
+            set
+            {
+                _selectedProcess = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -33,5 +46,6 @@ namespace Lab05_CSharp.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }
